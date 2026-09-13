@@ -23,13 +23,13 @@ Build a small airline operations dashboard as a focused interview project.
 ## Phase 2: Database
 
 - [x] Design the SQL schema
-- [ ] Add seed data
+- [x] Add seed data
 - [x] Add database connection
-- [ ] Verify basic queries
+- [x] Verify basic queries
 
 ## Phase 3: Backend
 
-- [ ] Add flight endpoint
+- [x] Add flight endpoint
 - [ ] Add metrics endpoint
 - [ ] Add filtering
 - [ ] Add validation and error handling
@@ -61,3 +61,4 @@ Build a small airline operations dashboard as a focused interview project.
 - Production AWS deployment
 - Advanced analytics
 - Multiple unrelated dashboards
+- Timestamps are naive local datetimes; timezone-aware storage (UTC at rest, convert at the edges) is the correct production approach but out of scope for the MVP

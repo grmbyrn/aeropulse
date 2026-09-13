@@ -12,3 +12,10 @@ def _enable_sqlite_fks(dbapi_connection, connection_record):
     cursor.close()
 
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
