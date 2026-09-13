@@ -14,3 +14,6 @@ class FlightOut(BaseModel):
     scheduled_arrival: datetime
     actual_arrival: datetime | None
     status: str
+
+class MetricsOut(BaseModel):
+    total_flights: int

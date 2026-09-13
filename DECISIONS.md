@@ -17,3 +17,5 @@
 - Pydantic schemas in schemas.py are the API contract, kept separate from SQLAlchemy models
 - Flights are returned ordered by scheduled_departure; no implicit row order is relied on
 - Sessions are provided per-request via a FastAPI dependency
+
+- Status filter is constrained by the FlightStatus enum; invalid values return 422 rather than an empty result. Error handling beyond validation deferred — no endpoint currently has a not-found case

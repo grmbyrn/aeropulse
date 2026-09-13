@@ -30,10 +30,10 @@ Build a small airline operations dashboard as a focused interview project.
 ## Phase 3: Backend
 
 - [x] Add flight endpoint
-- [ ] Add metrics endpoint
-- [ ] Add filtering
-- [ ] Add validation and error handling
-- [ ] Add pytest tests
+- [x] Add metrics endpoint
+- [x] Add filtering
+- [x] Add validation and error handling
+- [x] Add pytest tests
 
 ## Phase 4: Frontend
 

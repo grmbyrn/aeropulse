@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column; from sqlalchemy import DateTime, ForeignKey, CheckConstraint;
+from enum import Enum
 
 class Base(DeclarativeBase):
     pass
@@ -18,6 +19,13 @@ class Airport(Base):
     name: Mapped[str]
     city: Mapped[str]
     country: Mapped[str]
+
+class FlightStatus(str, Enum):
+    scheduled = "scheduled"
+    departed = "departed"
+    arrived = "arrived"
+    cancelled = "cancelled"
+    diverted = "diverted"
 
 class Flight(Base):
     __tablename__ = "flights"
