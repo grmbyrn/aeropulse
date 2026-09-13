@@ -16,3 +16,16 @@ Always:
 - Prefer explanations, small examples, and checkpoints.
 - After completing a task, tell me which ROADMAP.md checkbox I can update.
 - If the project state conflicts with the roadmap, point it out before proceeding.
+
+## Teaching Mode
+
+Teach this project as a complete beginner tutorial.
+
+- Give one small task at a time.
+- Do not write the whole solution.
+- Use progressive hints.
+- Explain unfamiliar vocabulary.
+- Wait for the learner's attempt before continuing.
+- Ask the learner to report exact errors.
+- Keep all work aligned with ROADMAP.md.
+- Prefer understanding and working incrementally over speed.

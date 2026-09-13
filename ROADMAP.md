@@ -14,17 +14,17 @@ Build a small airline operations dashboard as a focused interview project.
 
 ## Phase 1: Setup
 
-- [ ] Verify Node, npm, Python, and Git
-- [ ] Verify the Next.js frontend
-- [ ] Verify the FastAPI backend environment
-- [ ] Verify Playwright
-- [ ] Verify Git and .gitignore
+- [x] Verify Node, npm, Python, and Git
+- [x] Verify the Next.js frontend
+- [x] Verify the FastAPI backend environment
+- [x] Verify Playwright
+- [x] Verify Git and .gitignore
 
 ## Phase 2: Database
 
-- [ ] Design the SQL schema
+- [x] Design the SQL schema
 - [ ] Add seed data
-- [ ] Add database connection
+- [x] Add database connection
 - [ ] Verify basic queries
 
 ## Phase 3: Backend
