@@ -42,7 +42,10 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: frontend/package-lock.json
-      - run: npm ci
+      # npm ci cannot be used: npm omits nested @emnapi deps of the
+      # *-wasm32-wasi optional packages (Tailwind oxide, unrs resolver)
+      # from locks generated on other platforms, so it false-fails on Linux.
+      - run: npm install --no-audit --no-fund
       - run: npm run lint
       - run: npx tsc --noEmit
       - run: npm run build
@@ -60,7 +63,10 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: frontend/package-lock.json
-      - run: npm ci
+      # npm ci cannot be used: npm omits nested @emnapi deps of the
+      # *-wasm32-wasi optional packages (Tailwind oxide, unrs resolver)
+      # from locks generated on other platforms, so it false-fails on Linux.
+      - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps
       - run: npx playwright test
       - uses: actions/upload-artifact@v7
