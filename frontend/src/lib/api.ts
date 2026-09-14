@@ -14,7 +14,6 @@ export type Flight = {
   scheduled_arrival: string
   actual_arrival: string | null
   status: string
-  status_counts: Record<string, number>
 }
 
 const base = process.env.API_BASE_URL ?? "http://localhost:8000"

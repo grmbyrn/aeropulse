@@ -6,6 +6,9 @@ type FlightTableProps = {
 }
 
 export default function FlightTable({flights}: FlightTableProps){
+    if(flights.length === 0){
+        return <p className="text-sm text-zinc-500">No flights match this filter.</p>
+    }
     return (
         <table className="w-full text-left text-sm">
             <thead>
