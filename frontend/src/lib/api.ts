@@ -19,12 +19,15 @@ const base = process.env.API_BASE_URL ?? "http://localhost:8000"
 
 export async function getMetrics(): Promise<Metrics>{
     const res = await fetch(`${base}/metrics`)
+    if(!res.ok) throw new Error(`GET ${base} failed: ${res.status}`)
     const data = await res.json()
     return data
 }
 
-export async function getFlights(): Promise<Flight[]>{
-    const res = await fetch(`${base}/flights`)
+export async function getFlights(status: string | undefined): Promise<Flight[]>{
+    const baseUrl = status ? `${base}/flights?status=${status}` : `${base}/flights`
+    const res = await fetch(baseUrl)
+    if(!res.ok) throw new Error(`GET ${baseUrl} failed: ${res.status}`)
     const data = await res.json()
     return data
 }
