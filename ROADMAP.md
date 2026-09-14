@@ -37,7 +37,7 @@ Build a small airline operations dashboard as a focused interview project.
 
 ## Phase 4: Frontend
 
-- [ ] Add dashboard layout
+- [x] Add dashboard layout
 - [ ] Add metric cards
 - [ ] Add flight table
 - [ ] Add filters
