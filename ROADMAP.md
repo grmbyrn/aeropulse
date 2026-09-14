@@ -39,7 +39,7 @@ Build a small airline operations dashboard as a focused interview project.
 
 - [x] Add dashboard layout
 - [x] Add metric cards
-- [ ] Add flight table
+- [x] Add flight table
 - [ ] Add filters
 - [ ] Add charts
 - [ ] Add loading, empty, and error states

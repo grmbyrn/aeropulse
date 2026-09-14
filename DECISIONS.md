@@ -19,3 +19,6 @@
 - Sessions are provided per-request via a FastAPI dependency
 
 - Status filter is constrained by the FlightStatus enum; invalid values return 422 rather than an empty result. Error handling beyond validation deferred — no endpoint currently has a not-found case
+
+- Reusable components live in src/components/, outside app/, which is routing only
+- API responses are typed at the boundary in src/lib/api.ts; the types are assertions, not runtime validation — Zod deferred

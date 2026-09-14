@@ -1,8 +1,10 @@
+import FlightTable from "@/components/FlightTable";
 import MetricCard from "@/components/MetricCard";
-import { getMetrics } from "@/lib/api";
+import { getFlights, getMetrics } from "@/lib/api";
 
 export default async function Home() {
-  const metrics = await getMetrics()
+  const [metrics, flights] = await Promise.all([getMetrics(), getFlights()])
+  
   return (
     <main className="flex-1 px-6 py-8">
       <div className="mx-auto w-full max-w-6xl space-y-8">
@@ -14,7 +16,7 @@ export default async function Home() {
         </section>
 
         <section>
-          <div className="h-64 rounded-lg border border-zinc-200" />
+          <FlightTable flights={flights} />
         </section>
       </div>
     </main>
