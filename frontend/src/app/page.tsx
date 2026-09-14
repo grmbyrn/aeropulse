@@ -1,5 +1,6 @@
 import FlightTable from "@/components/FlightTable";
 import MetricCard from "@/components/MetricCard";
+import StatusChart from "@/components/StatusChart";
 import StatusFilter from "@/components/StatusFilter";
 import { getFlights, getMetrics } from "@/lib/api";
 
@@ -17,8 +18,9 @@ export default async function Home(props: PageProps<"/">) {
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <MetricCard label="Total flights" value={metrics.total_flights} />
         </section>
+        <StatusChart counts={metrics.status_counts} total={metrics.total_flights} />
 
-        <StatusFilter />
+        <StatusFilter value={statusString} />
         <section>
           <FlightTable flights={flights} />
         </section>

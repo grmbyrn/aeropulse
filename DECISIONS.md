@@ -9,7 +9,10 @@
 - Architecture priority: simple, understandable, and expandable
 - Current priority: finish the smallest working vertical slice
 
-- MVP metric is total flights only; other metrics deferred
+- Metrics are total flights plus per-status counts, aggregated with an explicit SQL GROUP BY.
+  Statuses with zero rows are absent from the response rather than zero.
+- Charts are rendered as CSS bars; no charting library, as a bar chart did not warrant the dependency
+
 - Diverted flights are modelled as arriving at the planned destination (simplification)
 - SQLAlchemy models are the source of truth; metric aggregation written as explicit SQL
 - Timestamps stored via SQLAlchemy DateTime for Postgres portability

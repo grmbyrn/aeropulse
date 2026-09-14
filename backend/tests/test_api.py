@@ -11,7 +11,10 @@ def test_flights(client):
 def test_metrics(client):
     response = client.get("/metrics")
     assert response.status_code == 200
-    assert response.json() == {"total_flights": 4}
+    assert response.json() == {
+        "total_flights": 4,
+        "status_counts": {"arrived": 2, "cancelled": 1, "scheduled": 1}
+    }
 
 def test_status_arrived(client):
     response = client.get("/flights?status=arrived")

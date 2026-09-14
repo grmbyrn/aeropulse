@@ -2,7 +2,11 @@
 import { useRouter } from "next/navigation"
 import type { ChangeEvent } from "react"
 
-export default function StatusFilter(){
+type StatusFilterProps = {
+    value: string | undefined
+}
+
+export default function StatusFilter({value}: StatusFilterProps){
     const router = useRouter()
 
     function handleChange(e: ChangeEvent<HTMLSelectElement>){
@@ -14,7 +18,7 @@ export default function StatusFilter(){
     }
 
     return (
-        <select className="rounded-lg border border-zinc-200 px-3 py-2 text-sm" onChange={handleChange}>
+        <select className="rounded-lg border border-zinc-200 px-3 py-2 text-sm" onChange={handleChange} value={value ?? ""}>
             <option value="">All statuses</option>
             <option value="scheduled">Scheduled</option>
             <option value="departed">Departed</option>

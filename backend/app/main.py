@@ -31,5 +31,7 @@ def list_flights(db: Session = Depends(get_db), status: FlightStatus | None = No
 
 @app.get('/metrics', response_model=MetricsOut)
 def read_metrics(db: Session = Depends(get_db)):
-    metrics = db.execute(text("SELECT COUNT(*) FROM flights")).scalar_one()
-    return {"total_flights": metrics}
+    total = db.execute(text("SELECT COUNT(*) FROM flights")).scalar_one()
+    rows = db.execute(text("SELECT status, COUNT(*) FROM flights GROUP BY status")).all()
+    counts = {status: number for status, number in rows}
+    return {"total_flights": total, "status_counts": counts}

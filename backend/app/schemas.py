@@ -17,3 +17,4 @@ class FlightOut(BaseModel):
 
 class MetricsOut(BaseModel):
     total_flights: int
+    status_counts: dict[str, int]
