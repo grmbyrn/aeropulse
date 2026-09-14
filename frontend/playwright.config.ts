@@ -33,12 +33,22 @@ export default defineConfig({
           use: { ...devices['Desktop Chrome'], channel: 'chrome' },
         },
       ],
-  webServer: {
+  webServer: [
+    {
+      command: isCI
+        ? 'uvicorn app.main:app --port 8000'
+        : '.venv/bin/uvicorn app.main:app --port 8000',
+      cwd: '../backend',
+      url: 'http://localhost:8000/health',
+      reuseExistingServer: !isCI,
+      timeout: 60_000,
+    },
+    {
     // Dev server locally (a production build costs minutes of CPU and disk headroom).
     // CI tests the production build, as the Next.js docs recommend.
     command: isCI ? 'npm run build && npm run start' : 'npm run dev',
     url: 'http://localhost:3000',
     reuseExistingServer: !isCI,
     timeout: 180_000,
-  },
+  },]
 });

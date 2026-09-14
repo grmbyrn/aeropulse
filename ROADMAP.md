@@ -41,12 +41,12 @@ Build a small airline operations dashboard as a focused interview project.
 - [x] Add metric cards
 - [x] Add flight table
 - [x] Add filters
-- [ ] Add charts
-- [ ] Add loading, empty, and error states
+- [x] Add charts
+- [x] Add loading, empty, and error states
 
 ## Phase 5: End-to-end quality
 
-- [ ] Add one Playwright user journey
+- [x] Add one Playwright user journey
 - [ ] Improve responsive styling
 - [ ] Write README
 - [ ] Add architecture explanation
