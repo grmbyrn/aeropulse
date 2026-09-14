@@ -1,4 +1,8 @@
-export default function Home() {
+import MetricCard from "@/components/MetricCard";
+import { getMetrics } from "@/lib/api";
+
+export default async function Home() {
+  const metrics = await getMetrics()
   return (
     <main className="flex-1 px-6 py-8">
       <div className="mx-auto w-full max-w-6xl space-y-8">
@@ -6,9 +10,7 @@ export default function Home() {
           Operations overview
         </h1>
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="h-24 rounded-lg border border-zinc-200" />
-          <div className="h-24 rounded-lg border border-zinc-200" />
-          <div className="h-24 rounded-lg border border-zinc-200" />
+          <MetricCard label="Total flights" value={metrics.total_flights} />
         </section>
 
         <section>
